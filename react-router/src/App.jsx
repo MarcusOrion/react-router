@@ -31,13 +31,16 @@ import Homepage from "./components/pages/HomePage";
 import ChiSiamo from "./components/pages/ChiSiamo";
 import Prodotti from "./components/pages/Prodotti";
 import { BrowserRouter, Routes, Route } from "react-router";
+import AppLayout from "./components/layout/AppLayout";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/chi-siamo" element={<ChiSiamo />} />
-        <Route path="/prodotti" element={<Prodotti />} />
+        <Route element={<AppLayout />}>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/chi-siamo" element={<ChiSiamo />} />
+          <Route path="/prodotti" element={<Prodotti />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
