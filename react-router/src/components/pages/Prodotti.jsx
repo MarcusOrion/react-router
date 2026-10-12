@@ -4,7 +4,7 @@ export default function Prodotti() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     async function fetchProducts() {
-      const response = await fetch("https://dummyjson.com/products?limit=12");
+      const response = await fetch(`https://dummyjson.com/products?limit=12`);
       const data = await response.json();
       setProducts(data.products);
     }
@@ -21,7 +21,7 @@ export default function Prodotti() {
                 <h5 className="card-title">{product.title}</h5>
 
                 <p className="card-text">Prezzo: {product.price} €</p>
-                <Link to={product.thumbnail}>
+                <Link to={`/prodotti/${product.id}`}>
                   <button className="btn btn-primary">Acquista</button>
                 </Link>
               </div>
