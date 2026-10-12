@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { Link } from "react-router";
 export default function Prodotti() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -21,8 +21,9 @@ export default function Prodotti() {
                 <h5 className="card-title">{product.title}</h5>
 
                 <p className="card-text">Prezzo: {product.price} €</p>
-
-                <button className="btn btn-primary">Acquista</button>
+                <Link to={product.thumbnail}>
+                  <button className="btn btn-primary">Acquista</button>
+                </Link>
               </div>
             </div>
           </div>
