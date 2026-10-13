@@ -35,6 +35,7 @@ import Prodotti from "./components/pages/Prodotti";
 import { BrowserRouter, Routes, Route } from "react-router";
 import AppLayout from "./components/layout/AppLayout";
 import SingleProduct from "./components/SingleProduct";
+import NotFound from "./components/pages/NotFound";
 function App() {
   return (
     <BrowserRouter>
@@ -44,6 +45,7 @@ function App() {
           <Route path="/ChiSiamo" element={<ChiSiamo />} />
           <Route path="/prodotti/" element={<Prodotti />} />
           <Route path="/prodotti/:id" element={<SingleProduct />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

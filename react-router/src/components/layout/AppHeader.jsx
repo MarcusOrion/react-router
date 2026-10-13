@@ -12,7 +12,7 @@ export default function AppHeader() {
             <NavLink to="/ChiSiamo">Chi Siamo</NavLink>
           </li>
           <li className="text-decoration-none text-danger fs-4">
-            <NavLink to="/Prodotti">Prodotti</NavLink>
+            <NavLink to="/prodotti">Prodotti</NavLink>
           </li>
         </ul>
       </header>

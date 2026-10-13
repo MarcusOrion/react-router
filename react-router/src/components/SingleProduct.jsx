@@ -1,17 +1,39 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 
 export default function SingleProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
   useEffect(() => {
     async function fetchProducts() {
-      const response = await fetch(`https://dummyjson.com/products/${id}`);
-      const data = await response.json();
-      setProduct(data);
+      setProduct(null);
+      setError(null);
+
+      try {
+        const response = await fetch(`https://dummyjson.com/products/${id}`);
+        if (response.status === 404) {
+          navigate("/prodotti");
+          return;
+        }
+
+        if (!response.ok) {
+          throw new Error("Impossibile caricare il prodotto. Riprova più tardi.");
+        }
+
+        const data = await response.json();
+        setProduct(data);
+      } catch {
+        setError("Impossibile caricare il prodotto. Riprova più tardi.");
+      }
     }
     fetchProducts();
-  }, [id]);
+  }, [id, navigate]);
+
+  if (error) {
+    return <p className="container mt-4 text-danger">{error}</p>;
+  }
 
   if (!product) {
     return <p className="container mt-4">Caricamento...</p>;
