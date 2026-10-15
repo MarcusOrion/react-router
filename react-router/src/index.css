@@ -1,8 +1,36 @@
 .amazon-header {
-  background-color: #131921;
+  background-color: #1d242e;
+}
+.amazon-footer {
+  background-color: #1d242e;
 }
 .amazon-logo {
   margin-top: 10px;
   margin-bottom: 10px;
   height: 100px;
+}
+.main-page {
+  min-height: 100vh;
+  background-image: url("./assets/amazon-page.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.card {
+  height: auto !important;
+  min-height: unset;
+  overflow: hidden;
+}
+
+.card-img-top {
+  width: calc(100% - 40px);
+  height: 390px;
+  margin: 20px 20px 0;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.card-body {
+  padding: 20px;
 }

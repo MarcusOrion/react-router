@@ -8,12 +8,18 @@ export default function AppHeader() {
           <img className="amazon-logo" src={logo} alt="Logo di Amazon" />
         </Link>
         <ul className="d-flex flex-row list-unstyled gap-3 mt-5">
-          <li className="text-decoration-none text-danger fs-4">
-            <NavLink to="/ChiSiamo">Chi Siamo</NavLink>
-          </li>
-          <li className="text-decoration-none text-danger fs-4">
-            <NavLink to="/prodotti">Prodotti</NavLink>
-          </li>
+          <NavLink
+            to="/ChiSiamo"
+            className="text-decoration-none text-warning fs-4"
+          >
+            Chi Siamo
+          </NavLink>
+          <NavLink
+            to="/prodotti"
+            className="text-decoration-none text-warning fs-4"
+          >
+            Prodotti
+          </NavLink>
         </ul>
       </header>
     </div>
